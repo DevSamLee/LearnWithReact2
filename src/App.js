@@ -5,7 +5,10 @@ function App() {
   useEffect(() => {
     fetch("https://api.coinpaprika.com/v1/tickers")
     .then((response) => response.json())
-    .then((json) => console.log(json));
+    .then((json) => {
+      setCoins(json);
+      setLoading(false);
+    });
   }, []);
   return (
   <div>
